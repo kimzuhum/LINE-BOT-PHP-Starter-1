@@ -6,8 +6,8 @@ $access_token = "3aFEdZpiq4wWshuqq8KneQPghVfJwhw4Z8BlzthC4I6j3C5PG6ccvxkEM1vjIPq
 ";
 
 $userid = iconv("tis-620","utf-8",$line_id);
-//   echo $em_id . " | " . $userid . " | " . $msg . "<br>" ;
-
+   echo $em_id . " | " . $userid . " | " . $msg . "<br>" ;
+exit;
                         $messages = [
                                 'type' => 'text',
                                 'text' => $msg
