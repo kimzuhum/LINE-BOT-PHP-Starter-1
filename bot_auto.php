@@ -37,6 +37,30 @@ if($arrJson['events'][0]['message']['text'] == "ขอไอดี"){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "สวัสดีชาวโลก...";
+}else if($arrJson['events'][0]['message']['text'] == "connect"){// connect data base
+ 
+ 
+ 
+ $objConnect = mysql_connect("61.47.34.20","root","hs5fe");
+	if($objConnect)
+	{
+		//echo "Database Connected.";
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "Database Connected.";
+	}
+	else
+	{
+		//echo "Database Connect Failed.";
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "Database Connect Failed.";
+	}
+
+	mysql_close($objConnect);
+ 
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
