@@ -1,20 +1,21 @@
 <?php
-$objConnect = mysqli_connect("61.47.34.20","root","hs5fe","pongpark");
-if($objConnect){
-echo $sql = "SELECT * FROM tb_question WHERE ask = '" . test . "'";
-$result = mysqli_query($objConnect,$sql);
-$row = mysqli_fetch_row($result);
+//$objConnect = mysqli_connect("61.47.34.20","root","hs5fe","pongpark");
+$mysqli = new mysqli("61.47.34.20", "root", "hs5fe", "pongpark");
 
-echo "ANS : " , $row['ans'];
+if(mysqli_connect_errno()){
+	echo "Failed to connect.";
+}else{
+/*echo $sql = "SELECT * FROM tb_question WHERE ask = '" . test . "'";
+$result = mysqli_query($objConnect,$sql);
+$row = mysqli_fetch_row($result);*/
+
+if ($result = $mysqli->query("SELECT * FROM tb_question WHERE ask = 'test")) {
+    $row = $result->fetch_row();
+    printf("Default database is %s.\n", $row[2]);
+    $result->close();
+}
 	
-if(!isset($row['ans'])){
-  echo $row['ans'];
-}else{
-  echo "ฉันไม่เข้าใจคำสั่ง";
 }
-}else{
-  echo "Failed to connect.";
-}
-	mysqli_close($objConnect);
+	//mysqli_close($objConnect);
   
   ?>
