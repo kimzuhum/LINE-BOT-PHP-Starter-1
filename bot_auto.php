@@ -41,7 +41,7 @@ if($arrJson['events'][0]['message']['text'] == "ขอไอดี"){
  
  
  
- $objConnect = mysqli_connect("61.47.34.20","root","hs5fe");
+ $objConnect = mysqli_connect("61.47.34.20","root","hs5fe","pongpark");
  if($objConnect)
 	{
 //echo "Database Connected.";
