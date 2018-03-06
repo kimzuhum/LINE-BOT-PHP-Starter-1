@@ -12,10 +12,10 @@ mysql_query("SET NAMES 'tis620'");
 echo "<br/>ASN : " . $obj_row['txt_ans'];
 */
 
-$servername = "61.47.34.20";
+$servername = "office.winbb.net";
 $username = "root";
 $password = "hs5fe";
-$dbname = "pongpank";
+$dbname = "pongpark";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
