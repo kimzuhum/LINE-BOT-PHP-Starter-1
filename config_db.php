@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: text/html; charset=utf-8');
 date_default_timezone_set("Asia/Bangkok");
 
 $strAccessToken = "T0SP3C3GuTGXd1XKSWQ0HJrENyiAVRu4/fo8vHokDtmtU0qYCKTA1U7SwD9rykeIxTfkDDxuP4TZu7Eea0zr36O/dAQy18VvCoYVIImzkHVQQ8sAHdV+p17u/97Ud24almhqwXHSlKhAvvf83CF3FQdB04t89/1O/w1cDnyilFU=";
