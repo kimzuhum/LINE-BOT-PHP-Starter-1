@@ -14,9 +14,9 @@ $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
 
 if($arrJson['events'][0]['message']['text'] == "connect"){
 	
-	$conn = mysql_connect('61.47.34.20', 'root', 'hs5fe') or die('Could not connect: ' . mysql_error());
-	$db_selected = mysql_select_db('pongpark', $conn) or die ('Can\'t use Database : ' . mysql_error());
-	mysql_query("SET NAMES 'tis620'");
+	$conn = @mysql_connect('61.47.34.20', 'root', 'hs5fe') or die('Could not connect: ' . @mysql_error());
+	$db_selected = @mysql_select_db('pongpark', $conn) or die ('Can\'t use Database : ' . @mysql_error());
+	@mysql_query("SET NAMES 'tis620'");
 
 	$strSQL = "SELECT * FROM tb_question WHERE txt_ask = 'test'";
 	$objQuery = mysql_query($strSQL);
