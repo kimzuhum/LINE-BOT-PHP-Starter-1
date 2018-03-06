@@ -41,10 +41,10 @@ if($arrJson['events'][0]['message']['text'] == "ขอไอดี"){
  
  
  
- $objConnect = mysql_connect("61.47.34.20","root","hs5fe");
-	if($objConnect)
+ $objConnect = mysqli_connect("61.47.34.20","root","hs5fe");
+ if($objConnect)
 	{
-		//echo "Database Connected.";
+//echo "Database Connected.";
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
@@ -59,7 +59,7 @@ if($arrJson['events'][0]['message']['text'] == "ขอไอดี"){
   $arrPostData['messages'][0]['text'] = "Database Connect Failed.";
 	}
 
-	mysql_close($objConnect);
+	mysqli_close($objConnect);
  
 }else{
   $arrPostData = array();
