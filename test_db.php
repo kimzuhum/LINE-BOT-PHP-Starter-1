@@ -1,7 +1,7 @@
 <?php
 $objConnect = mysqli_connect("61.47.34.20","root","hs5fe","pongpark");
 if($objConnect){
-$sql = "SELECT * FROM tb_question WHERE ask = '" . Test . "'";
+echo $sql = "SELECT * FROM tb_question WHERE ask = '" . Test . "'";
 $result = mysqli_query($objConnect,$sql);
 $row = mysqli_fetch_row($result);
 if(!isset($row['ans'])){
