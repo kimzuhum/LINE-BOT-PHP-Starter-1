@@ -24,14 +24,13 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT * FROM tb_question";
+$sql = "SELECT * FROM tb_question WHERE txt_ask = '" . test . "'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["ques_id"]. " - ask: " . $row["txt_ask"]. " ans " . $row["txt_ans"]. "<br>";
-    }
+   $row = $result->fetch_assoc()
+      echo "id: " . $row["ques_id"]. " - ask: " . $row["txt_ask"]. " ans " . $row["txt_ans"]. "<br>";
 } else {
     echo "0 results";
 }
