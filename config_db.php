@@ -31,6 +31,7 @@ $sql = "SELECT * FROM tb_question WHERE txt_ask = '" . $arrJson['events'][0]['me
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
+  $row = $result->fetch_assoc();
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
