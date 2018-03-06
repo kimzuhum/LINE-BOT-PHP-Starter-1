@@ -4,6 +4,9 @@ if($objConnect){
 echo $sql = "SELECT * FROM tb_question WHERE ask = '" . test . "'";
 $result = mysqli_query($objConnect,$sql);
 $row = mysqli_fetch_row($result);
+
+echo "ANS : " , $row['ans'];
+	
 if(!isset($row['ans'])){
   echo $row['ans'];
 }else{
