@@ -27,7 +27,7 @@ if ($conn->connect_error) {
   $arrPostData['messages'][0]['text'] = "connect error";
 } 
 
-$sql = "SELECT * FROM tb_question WHERE txt_ask = '" . test . "'";
+$sql = "SELECT * FROM tb_question WHERE txt_ask = '" . $arrJson['events'][0]['message']['text'] . "'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
